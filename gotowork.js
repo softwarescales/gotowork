@@ -142,7 +142,7 @@ process.argv = argv;
 argv = optimist(argv)
     // usage and desctiptions
     .usage('Usage:\n' +
-        '  deploy [options] [descriptor.json]\n\n' +
+        '  gotowork [options] [descriptor.json]\n\n' +
         '  If no deployment descriptor is provided, a file named deployment.json will be\n' +
         '  searched for in the current directory. If deployment.json is not found, all\n' +
         '  the mandatory deployment properties must be provided as options.'
