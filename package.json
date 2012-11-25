@@ -1,11 +1,16 @@
 {
     "name": "gotowork",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "dependencies": {
-        "optimist": "*"
+        "optimist": "0.3.5"
     },
     "devDependencies": {
     },
-    "scripts": {
+    "bin": {
+        "gotowork": "./bin/gotowork"
+    },
+    "engines": {
+        "node": "0.8.x"
     }
 }
+

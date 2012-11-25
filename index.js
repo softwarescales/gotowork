@@ -90,19 +90,17 @@ var aliases = {
     'h': 'host',
     'p': 'port',
     'u': 'user',
-    'o': 'overwrite',
+    'f': 'force',
     'd': 'path',
-    'r': 'repo',
-    's': 'script'
+    'r': 'repo'
 }
 var descriptions = {
     'host': 'the host name of the server to which the deployment is made',
     'port': 'the port on which the server should listen',
     'user': 'the user name form which the deployment is made on the host',
     'path': 'the path on the server where the deployment will be made',
-    'overwrite': 'if the deployment should overwrite (remove) path if this already exists',
-    'repo': 'the URL of the repository from where to fetch the code',
-    'script': 'the path of the script that should be run for this deployment relative to the path option'
+    'force': 'the deployment should overwrite (remove) path if this already exists',
+    'repo': 'the URL of the repository from where to fetch the code'
 }
 
 // overwriting the descriptor options
@@ -149,14 +147,14 @@ argv = optimist(argv)
     )
     .alias(aliases)
     .describe(descriptions)
-    .demand(['host', 'user', 'repo', 'script'])
+    .demand(['host', 'user', 'repo'])
     // types
-    .string(['host', 'user', 'path', 'repo', 'script'])
-    .boolean('overwrite')
+    .string(['host', 'user', 'path', 'repo'])
+    .boolean('force')
     // defaults
     .default('port', 80)
     .default('path', '~')
-    .default('overwrite', false)
+    .default('force', false)
 
     .check(validate)
     .argv;
@@ -198,5 +196,6 @@ ssh.on('exit', function (code) {
     } else {
         console.log('Deployment finished with error code: ' + code);
     }
+    process.exit(code);
 });
 
