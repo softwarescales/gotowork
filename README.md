@@ -38,28 +38,28 @@ Options:
 To make a deployment having a `descriptor.json` in the current working directory,
 you only need to provide a deployment script:
 
-```
-gotowork < my_deployment.sh
+``` bash
+$ gotowork < my_deployment.sh
 ```
 
 If the deployment descriptor is called other than `descriptor.json` or is in another
 location than the current working directory just provide it as argument to gotowork:
 
-```
-gotowork my_descriptor.json < my_deployment.sh
+``` bash
+$ gotowork my_descriptor.json < my_deployment.sh
 ```
 
 If you want to overwrite some of the options in the descriptor file, just provide
 them as options:
 
-```
-gotowork --server dev.example.com my_descriptor.json < my_deployment.sh
+``` bash
+$ gotowork --server dev.example.com my_descriptor.json < my_deployment.sh
 ```
 
 Maybe you want to make an test deployment of a feature in another repo:
 
-```
-gotowork --repo my_new_feature_repo --port 8081 my_descriptor.json < my_deployment.sh
+``` bash
+$ gotowork --repo my_new_feature_repo --port 8081 my_descriptor.json < my_deployment.sh
 ```
 
 ## Options
