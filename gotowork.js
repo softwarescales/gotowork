@@ -149,7 +149,7 @@ argv = optimist(argv)
     )
     .alias(aliases)
     .describe(descriptions)
-    .demand(['host', 'user', 'repo', 'script', 'env'])
+    .demand(['host', 'user', 'repo', 'script'])
     // types
     .string(['host', 'user', 'path', 'repo', 'script'])
     .boolean('overwrite')

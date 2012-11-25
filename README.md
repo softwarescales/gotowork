@@ -33,5 +33,4 @@ Options:
   --overwrite, -o  if the deployment should overwrite (remove) path if this already exists                    [boolean]  [default: false]
   --repo, -r       the URL of the repository from where to fetch the code                                     [string]  [required]
   --script, -s     the path of the script that should be run for this deployment relative to the path option  [string]  [required]
-  --env                                                                                                       [required]
 ```
